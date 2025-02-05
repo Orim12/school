@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "progameren", "progameren", "{4C06D6F9-B524-43BD-BBDD-BCF6FF8096B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prog 5", "prog 5", "{4AA2D3D2-9548-4A45-BE3F-57E663054B46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "opdracht 1", "opdracht 1", "{EB2AF4AB-790B-406A-9495-440F32B42570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "progameren\prog 5\opdracht 1\ConsoleApp1\ConsoleApp1.csproj", "{A45843C3-6CFE-4503-900B-9717A698526F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A45843C3-6CFE-4503-900B-9717A698526F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45843C3-6CFE-4503-900B-9717A698526F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45843C3-6CFE-4503-900B-9717A698526F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45843C3-6CFE-4503-900B-9717A698526F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4AA2D3D2-9548-4A45-BE3F-57E663054B46} = {4C06D6F9-B524-43BD-BBDD-BCF6FF8096B2}
+		{EB2AF4AB-790B-406A-9495-440F32B42570} = {4AA2D3D2-9548-4A45-BE3F-57E663054B46}
+		{A45843C3-6CFE-4503-900B-9717A698526F} = {EB2AF4AB-790B-406A-9495-440F32B42570}
+	EndGlobalSection
+EndGlobal
