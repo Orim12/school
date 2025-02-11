@@ -7,6 +7,34 @@ class BooksController {
         $books = Book::getAllBooks();
         require '../views/books.php';
     }
-}
 
+    public function create() {
+        require '../views/create_book.php';
+    }
+
+    public function store() {
+        $book = new Book($_POST['titel'], $_POST['auteur'], $_POST['prijs']);
+        $book->save();
+        header('Location: /webdev/MVC1/public/index.php?url=books');
+    }
+
+    public function edit($id) {
+        $book = Book::getBookById($id);
+        require '../views/edit_book.php';
+    }
+
+    public function update($id) {
+        $book = Book::getBookById($id);
+        $book->titel = $_POST['titel'];
+        $book->auteur = $_POST['auteur'];
+        $book->prijs = $_POST['prijs'];
+        $book->save();
+        header('Location: /webdev/MVC1/public/index.php?url=books');
+    }
+
+    public function delete($id) {
+        Book::deleteById($id);
+        header('Location: /webdev/MVC1/public/index.php?url=books');
+    }
+}
 ?>
