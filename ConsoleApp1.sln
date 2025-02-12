@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "progameren", "progameren", "{2B18B656-1BDA-4947-BDFD-03509B622898}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prog 5", "prog 5", "{21C93B8B-7F7C-46DA-9DC3-EBD06BCF0371}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prog-5", "prog-5", "{21C93B8B-7F7C-46DA-9DC3-EBD06BCF0371}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "opdracht 1", "opdracht 1", "{6D76846E-2CAF-428B-95FB-81DD7570E8A4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "opdracht-1", "opdracht-1", "{6D76846E-2CAF-428B-95FB-81DD7570E8A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "progameren\prog 5\opdracht 1\ConsoleApp1\ConsoleApp1.csproj", "{EE061AD9-1514-46E4-85DE-2B3C013B6082}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "progameren\prog-5\opdracht-1\ConsoleApp1\ConsoleApp1.csproj", "{EE061AD9-1514-46E4-85DE-2B3C013B6082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
