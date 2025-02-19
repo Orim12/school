@@ -15,43 +15,45 @@ class Program
             int aantalOrkestleden = 11;
             //Het orkest!
             //welkom heten
-            Welkom();
+            Console.WriteLine(Welkom());
             //vertel over het orkest
-            VertelOverOrkest(aantalOrkestleden);
+            Console.WriteLine(VertelOverOrkest(aantalOrkestleden));
             //start van het concert
-            StartConcert();
+            Console.WriteLine(StartConcert());
             //drums aansturen!
-            Speeldrums(aantalkeer);
+            Console.WriteLine(Speeldrums(aantalkeer));
             // sluiting
-            Sluiting();
+            Console.WriteLine(Sluiting());
         }
 
-        public void Speeldrums(int drum)
+        public string Speeldrums(int drum)
         {
+            string result = "";
             for (int i = 0; i < drum; i++)
             {
-                Console.WriteLine("Bomberdebom");
+                result += "Bomberdebom\n";
             }
+            return result.Trim();
         }
 
-        private void Welkom()
+        private string Welkom()
         {
-            Console.WriteLine("Welkom bij dit optreden van de band!");
+            return "Welkom bij dit optreden van de band!";
         }
 
-        private void VertelOverOrkest(int aantalOrkestleden)
+        private string VertelOverOrkest(int aantalOrkestleden)
         {
-            Console.WriteLine($"Het orkest telt momenteel {aantalOrkestleden} leden.");
+            return $"Het orkest telt momenteel {aantalOrkestleden} leden.";
         }
 
-        private void StartConcert()
+        private string StartConcert()
         {
-            Console.WriteLine("Het orkest gaat beginnen, wees stil alstublieft.");
+            return "Het orkest gaat beginnen, wees stil alstublieft.";
         }
 
-        private void Sluiting()
+        private string Sluiting()
         {
-            Console.WriteLine("Dank voor uw aandacht en tot het volgende optreden.");
+            return "Dank voor uw aandacht en tot het volgende optreden.";
         }
     }
 }
