@@ -21,6 +21,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/webdev/MVC1/public/index.php?url=books&action=create">Boek Toevoegen</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/webdev/MVC1/public/index.php?url=books">Boekenlijst</a>
+                </li>
             </ul>
         </div>
     </div>

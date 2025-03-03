@@ -3,6 +3,12 @@
 require_once __DIR__ . '/../models/Book.php';
 
 class BooksController {
+    // Database columns for the books table:
+    // id INT AUTO_INCREMENT PRIMARY KEY
+    // titel VARCHAR(255)
+    // auteur VARCHAR(255)
+    // prijs DECIMAL(10, 2)
+
     public function index() {
         $books = Book::getAllBooks();
         require __DIR__ . '/../views/books.php';
@@ -13,7 +19,7 @@ class BooksController {
     }
 
     public function store() {
-        $book = new Book($_POST['titel'], $_POST['auteur'], $_POST['prijs'], $_POST['id']);
+        $book = new Book($_POST['titel'], $_POST['auteur'], $_POST['prijs']);
         $book->save();
         header('Location: /webdev/MVC1/public/index.php?url=books');
     }

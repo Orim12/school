@@ -39,7 +39,7 @@ class Book {
             $stmt = $pdo->prepare('UPDATE books SET titel = ?, auteur = ?, prijs = ? WHERE id = ?');
             $stmt->execute([$this->titel, $this->auteur, $this->prijs, $this->id]);
         } else {
-            $stmt = $pdo->prepare('INSERT INTO books (titel, auteur, prijs, id) VALUES (?, ?, ?, ?)');
+            $stmt = $pdo->prepare('INSERT INTO books (titel, auteur, prijs) VALUES (?, ?, ?)');
             $stmt->execute([$this->titel, $this->auteur, $this->prijs]);
             $this->id = $pdo->lastInsertId();
         }
