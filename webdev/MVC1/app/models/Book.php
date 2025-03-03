@@ -39,7 +39,7 @@ class Book {
             $stmt = $pdo->prepare('UPDATE books SET titel = ?, auteur = ?, prijs = ? WHERE id = ?');
             $stmt->execute([$this->titel, $this->auteur, $this->prijs, $this->id]);
         } else {
-            $stmt = $pdo->prepare('INSERT INTO books (titel, auteur, prijs) VALUES (?, ?, ?)');
+            $stmt = $pdo->prepare('INSERT INTO books (titel, auteur, prijs, id) VALUES (?, ?, ?, ?)');
             $stmt->execute([$this->titel, $this->auteur, $this->prijs]);
             $this->id = $pdo->lastInsertId();
         }
@@ -60,7 +60,11 @@ class Book {
         $stmt = $pdo->prepare('SELECT * FROM books WHERE id = ?');
         $stmt->execute([$id]);
         $row = $stmt->fetch();
-        return new Book($row['titel'], $row['auteur'], $row['prijs'], $row['id']);
+        if ($row) {
+            return new Book($row['titel'], $row['auteur'], $row['prijs'], $row['id']);
+        } else {
+            return null;
+        }
     }
 
     public static function deleteById($id) {

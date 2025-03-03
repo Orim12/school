@@ -7,6 +7,7 @@
             <tr>
                 <th scope="col">Titel</th>
                 <th scope="col">Auteur</th>
+                <th scope="col">id</th>
                 <th scope="col">Acties</th>
             </tr>
         </thead>
@@ -15,6 +16,7 @@
             <tr>
                 <td><?php echo $book->titel; ?></td>
                 <td><?php echo $book->auteur; ?></td>
+                <td><?php echo $book->id; ?></td>
                 <td>
                     <a href="/webdev/MVC1/public/index.php?url=books&action=edit&id=<?php echo $book->id; ?>" class="btn btn-warning btn-sm">Bewerken</a>
                     <a href="/webdev/MVC1/public/index.php?url=books&action=delete&id=<?php echo $book->id; ?>" class="btn btn-danger btn-sm">Verwijderen</a>

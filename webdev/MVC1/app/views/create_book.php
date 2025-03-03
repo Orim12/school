@@ -14,6 +14,28 @@
             <label for="prijs" class="form-label">Prijs:</label>
             <input type="text" class="form-control" id="prijs" name="prijs" required>
         </div>
+        <?php
+        function generateRandomId($length = 10) {
+            return substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', $length)), 0, $length);
+        }
+
+        function isIdAvailable($id, $pdo) {
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM books WHERE id = :id");
+            $stmt->execute(['id' => $id]);
+            return $stmt->fetchColumn() == 0;
+        }
+
+        // Assuming you have a PDO connection $pdo
+        $pdo = new PDO('mysql:host=localhost;dbname=Bookbistro', 'root', '');
+
+        do {
+            $randomId = generateRandomId();
+        } while (!isIdAvailable($randomId, $pdo));
+        ?>
+        <div style="display: none;">
+            <label for="id" class="form-label">id:</label>
+            <input type="text" class="form-control" id="id" name="id" value="<?php echo $randomId; ?>" required>
+        </div>
         <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
 </div>

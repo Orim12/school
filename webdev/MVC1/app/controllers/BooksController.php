@@ -13,7 +13,7 @@ class BooksController {
     }
 
     public function store() {
-        $book = new Book($_POST['titel'], $_POST['auteur'], $_POST['prijs']);
+        $book = new Book($_POST['titel'], $_POST['auteur'], $_POST['prijs'], $_POST['id']);
         $book->save();
         header('Location: /webdev/MVC1/public/index.php?url=books');
     }
