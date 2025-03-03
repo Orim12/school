@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nieuw Boek</title>
-</head>
-<body>
+<?php include_once __DIR__ . '/header.php'; ?>
+<div class="container mt-4">
     <h1>Nieuw Boek</h1>
     <form action="/webdev/MVC1/public/index.php?url=books&action=store" method="post">
-        <label for="titel">Titel:</label>
-        <input type="text" id="titel" name="titel" required><br>
-        <label for="auteur">Auteur:</label>
-        <input type="text" id="auteur" name="auteur" required><br>
-        <label for="prijs">Prijs:</label>
-        <input type="text" id="prijs" name="prijs" required><br>
-        <button type="submit">Opslaan</button>
+        <div class="mb-3">
+            <label for="titel" class="form-label">Titel:</label>
+            <input type="text" class="form-control" id="titel" name="titel" required>
+        </div>
+        <div class="mb-3">
+            <label for="auteur" class="form-label">Auteur:</label>
+            <input type="text" class="form-control" id="auteur" name="auteur" required>
+        </div>
+        <div class="mb-3">
+            <label for="prijs" class="form-label">Prijs:</label>
+            <input type="text" class="form-control" id="prijs" name="prijs" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Opslaan</button>
     </form>
-</body>
-</html>
+</div>
+<?php include_once __DIR__ . '/footer.php'; ?>

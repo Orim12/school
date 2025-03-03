@@ -5,11 +5,11 @@ require_once __DIR__ . '/../models/Book.php';
 class BooksController {
     public function index() {
         $books = Book::getAllBooks();
-        require '../views/books.php';
+        require __DIR__ . '/../views/books.php';
     }
 
     public function create() {
-        require '../views/create_book.php';
+        require __DIR__ . '/../views/create_book.php';
     }
 
     public function store() {
@@ -20,7 +20,7 @@ class BooksController {
 
     public function edit($id) {
         $book = Book::getBookById($id);
-        require '../views/edit_book.php';
+        require __DIR__ . '/../views/edit_book.php';
     }
 
     public function update($id) {
