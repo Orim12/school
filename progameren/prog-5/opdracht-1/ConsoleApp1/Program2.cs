@@ -2,11 +2,11 @@ class Program
 { 
     static void Main(string[] args)
     {
-        Orkest orkest = new Orkest();
+        Orkeest orkest = new Orkeest();
         orkest.Dirigeer();
     }
 
-    class Orkest
+    class Orkeest
     {
         public void Dirigeer()
         {
