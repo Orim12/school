@@ -9,6 +9,8 @@ $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 
+$controller = null;
+
 switch ($url) {
     case 'books':
         $controller = new BooksController();
@@ -22,15 +24,24 @@ switch ($url) {
             $controller->update($id);
         } elseif ($action == 'delete') {
             $controller->delete($id);
-        } else {
+        } elseif ($action == 'show') {
+            $controller->show($id);
+        } elseif ($action === null) {
             $controller->index();
+        } else {
+            header("HTTP/1.0 404 Not Found");
+            require_once __DIR__ . '/../app/views/404.php';
+            exit();
         }
         break;
     case 'home':
-    default:
         $controller = new HomeController();
         $controller->index();
         break;
+    default:
+        header("HTTP/1.0 404 Not Found");
+        require_once __DIR__ . '/../app/views/404.php';
+        exit();
 }
 
 include_once __DIR__ . '/../app/views/footer.php';

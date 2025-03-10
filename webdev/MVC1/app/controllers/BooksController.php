@@ -24,6 +24,11 @@ class BooksController {
         header('Location: /webdev/MVC1/public/index.php?url=books');
     }
 
+    public function show($id) {
+        $book = Book::getBookById($id);
+        require __DIR__ . '/../views/show_book.php';
+    }
+
     public function edit($id) {
         $book = Book::getBookById($id);
         require __DIR__ . '/../views/edit_book.php';
