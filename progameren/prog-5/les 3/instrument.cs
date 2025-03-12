@@ -9,3 +9,8 @@ public class Instrument(string geluid)
         return mijnGeluid;
     }
 }
+
+
+
+
+        
