@@ -4,9 +4,9 @@
     <ul class="list-group">
         <?php foreach ($books as $book): ?>
         <li class="list-group-item">
-            <strong><?php echo $book->titel; ?></strong><br>
-            Auteur: <?php echo $book->auteur; ?><br>
-            Prijs: €<?php echo $book->prijs; ?>
+            <strong><?php echo htmlspecialchars($book->titel, ENT_QUOTES, 'UTF-8'); ?></strong><br>
+            Auteur: <?php echo htmlspecialchars($book->auteur, ENT_QUOTES, 'UTF-8'); ?><br>
+            Prijs: €<?php echo htmlspecialchars($book->prijs, ENT_QUOTES, 'UTF-8'); ?>
         </li>
         <?php endforeach; ?>
     </ul>

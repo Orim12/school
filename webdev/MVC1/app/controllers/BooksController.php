@@ -19,6 +19,9 @@ class BooksController {
     }
 
     public function store() {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("Ongeautoriseerd verzoek.");
+        }
         $book = new Book($_POST['titel'], $_POST['auteur'], $_POST['prijs']);
         $book->save();
         header('Location: /webdev/MVC1/public/index.php?url=books');
@@ -35,6 +38,9 @@ class BooksController {
     }
 
     public function update($id) {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("Ongeautoriseerd verzoek.");
+        }
         $book = Book::getBookById($id);
         $book->titel = $_POST['titel'];
         $book->auteur = $_POST['auteur'];
@@ -44,6 +50,9 @@ class BooksController {
     }
 
     public function delete($id) {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("Ongeautoriseerd verzoek.");
+        }
         Book::deleteById($id);
         header('Location: /webdev/MVC1/public/index.php?url=books');
     }

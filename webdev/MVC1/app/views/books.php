@@ -15,13 +15,13 @@
         <tbody>
             <?php foreach ($books as $book): ?>
             <tr>
-                <td><?php echo $book->titel; ?></td>
-                <td><?php echo $book->auteur; ?></td>
-                <td>€<?php echo $book->prijs; ?></td>
-                <td><?php echo $book->id; ?></td>
+                <td><?php echo htmlspecialchars($book->titel, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($book->auteur, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td>€<?php echo htmlspecialchars($book->prijs, ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?php echo htmlspecialchars($book->id, ENT_QUOTES, 'UTF-8'); ?></td>
                 <td>
-                    <a href="/webdev/MVC1/public/index.php?url=books&action=edit&id=<?php echo $book->id; ?>" class="btn btn-warning btn-sm">Bewerken</a>
-                    <a href="/webdev/MVC1/public/index.php?url=books&action=delete&id=<?php echo $book->id; ?>" class="btn btn-danger btn-sm">Verwijderen</a>
+                    <a href="/webdev/MVC1/public/index.php?url=books&action=edit&id=<?php echo htmlspecialchars($book->id, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-warning btn-sm">Bewerken</a>
+                    <a href="/webdev/MVC1/public/index.php?url=books&action=delete&id=<?php echo htmlspecialchars($book->id, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-danger btn-sm">Verwijderen</a>
                 </td>
             </tr>
             <?php endforeach; ?>
