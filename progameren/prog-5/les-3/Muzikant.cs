@@ -13,11 +13,11 @@ namespace les_3
         {
             var instrumenten = new Dictionary<string, Instrument>
             {
-                { "drum", new Instrument("drumgeluid") },
-                { "trompet", new Instrument("trompetgeluid") },
-                { "piano", new Instrument("pianogeluid") },
-                { "gitaar", new Instrument("gitaar geluid") },
-                { "zanger", new Instrument("zanggeluid") }
+                { "drum", new Instrument("Drummer", "Straat 3, Stad", "drumgeluid") },
+                { "trompet", new Instrument("Trompettist", "Straat 4, Stad", "trompetgeluid") },
+                { "piano", new Instrument("Pianist", "Straat 5, Stad", "pianogeluid") },
+                { "gitaar", new Instrument("Gitarist", "Straat 6, Stad", "gitaar geluid") },
+                { "zanger", new Instrument("Zanger", "Straat 7, Stad", "zanggeluid") }
             };
 
             var aanwijzingenLijst = aanwijzingen.Split(", ");
