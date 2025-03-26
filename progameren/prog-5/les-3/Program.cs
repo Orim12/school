@@ -5,7 +5,8 @@ class Program
     static void Main(string[] args)
     {
         short aantalLeden = 10;
-        Muzikant muzikant = new();
+        Muzikant muzikant = new("Jan", "Straat 1, Stad");
+        Dirigent dirigent = new("Piet", "Straat 2, Stad");
         string aanwijzingen = Dirigent.GeefAanwijzingen();
 
         Console.WriteLine("Welkom bij dit optreden van de band!");

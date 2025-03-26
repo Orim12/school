@@ -1,7 +1,14 @@
 namespace les_3
 {
-    public class Muzikant
+    public class Muzikant : Persoon
     {
+        public Muzikant(string naam, string adres) : base(naam, adres) { }
+
+        public override void DoeIets()
+        {
+            Console.WriteLine($"{Naam} speelt muziek.");
+        }
+
         public void SpeelMuziek(string aanwijzingen)
         {
             var instrumenten = new Dictionary<string, Instrument>
