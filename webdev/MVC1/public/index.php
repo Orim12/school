@@ -46,8 +46,16 @@ switch ($url) {
         $controller = new AdminController();
         if ($action === 'manageUsers') {
             $controller->manageUsers();
+        } elseif ($action === 'deleteUser' && $id) {
+            $controller->deleteUser($id);
+        } elseif ($action === 'makeAdmin' && $id) {
+            $controller->makeAdmin($id);
+        } elseif ($action === 'revokeAdmin' && $id) {
+            $controller->revokeAdmin($id);
         } elseif ($action === 'manageBooks') {
             $controller->manageBooks();
+        } elseif ($action === 'deleteBook' && $id) {
+            $controller->deleteBook($id);
         } elseif ($action === null) {
             $controller->dashboard();
         } else {
