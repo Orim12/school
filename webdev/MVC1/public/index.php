@@ -1,8 +1,17 @@
 <?php
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 require_once __DIR__ . '/../app/controllers/HomeController.php';
 require_once __DIR__ . '/../app/controllers/BooksController.php';
-
+require_once __DIR__ . '/../app/controllers/AdminController.php';
+require_once __DIR__ . '/../app/controllers/AuthController.php';
 include_once __DIR__ . '/../app/views/header.php';
 
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -14,30 +23,60 @@ $controller = null;
 switch ($url) {
     case 'books':
         $controller = new BooksController();
-        if ($action == 'create') {
+        if ($action === 'create') {
             $controller->create();
-        } elseif ($action == 'store') {
+        } elseif ($action === 'store') {
             $controller->store();
-        } elseif ($action == 'edit') {
+        } elseif ($action === 'edit') {
             $controller->edit($id);
-        } elseif ($action == 'update') {
+        } elseif ($action === 'update') {
             $controller->update($id);
-        } elseif ($action == 'delete') {
+        } elseif ($action === 'delete') {
             $controller->delete($id);
-        } elseif ($action == 'show') {
+        } elseif ($action === 'show') {
             $controller->show($id);
-        } elseif ($action === null) {
+        } elseif ($action === 'addComment') {
+            $controller->addComment($id);
+        } else {
             $controller->index();
+        }
+        break;
+
+    case 'admin':
+        $controller = new AdminController();
+        if ($action === 'manageUsers') {
+            $controller->manageUsers();
+        } elseif ($action === 'manageBooks') {
+            $controller->manageBooks();
+        } elseif ($action === null) {
+            $controller->dashboard();
         } else {
             header("HTTP/1.0 404 Not Found");
             require_once __DIR__ . '/../app/views/404.php';
             exit();
         }
         break;
+
+    case 'auth':
+        $controller = new AuthController();
+        if ($action === 'login') {
+            $controller->login();
+        } elseif ($action === 'register') {
+            $controller->register();
+        } elseif ($action === 'logout') {
+            $controller->logout();
+        } else {
+            header("HTTP/1.0 404 Not Found");
+            require_once __DIR__ . '/../app/views/404.php';
+            exit();
+        }
+        break;
+
     case 'home':
         $controller = new HomeController();
         $controller->index();
         break;
+
     default:
         header("HTTP/1.0 404 Not Found");
         require_once __DIR__ . '/../app/views/404.php';
@@ -46,12 +85,3 @@ switch ($url) {
 
 include_once __DIR__ . '/../app/views/footer.php';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>BookBistro</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-</body>
-</html>

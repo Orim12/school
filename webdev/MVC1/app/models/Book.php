@@ -45,9 +45,29 @@ class Book {
         }
     }
 
-    public static function getAllBooks() {
+    public static function getBooks($sort = null, $filter = null, $search = null) {
         $pdo = self::getConnection();
-        $stmt = $pdo->query('SELECT * FROM books');
+        $query = 'SELECT * FROM books WHERE 1=1';
+        $params = [];
+
+        if ($filter) {
+            $query .= ' AND auteur = ?';
+            $params[] = $filter;
+        }
+
+        if ($search) {
+            $query .= ' AND (titel LIKE ? OR auteur LIKE ?)';
+            $params[] = "%$search%";
+            $params[] = "%$search%";
+        }
+
+        if ($sort) {
+            $query .= ' ORDER BY ' . ($sort === 'titel' ? 'titel' : 'auteur');
+        }
+
+        $stmt = $pdo->prepare($query);
+        $stmt->execute($params);
+
         $books = [];
         while ($row = $stmt->fetch()) {
             $books[] = new Book($row['titel'], $row['auteur'], $row['prijs'], $row['id']);
@@ -71,6 +91,29 @@ class Book {
         $pdo = self::getConnection();
         $stmt = $pdo->prepare('DELETE FROM books WHERE id = ?');
         $stmt->execute([$id]);
+    }
+
+    public static function addComment($bookId, $comment, $rating) {
+        $pdo = self::getConnection();
+        $stmt = $pdo->prepare('INSERT INTO comments (book_id, comment, rating, created_at) VALUES (?, ?, ?, NOW())');
+        $stmt->execute([$bookId, $comment, $rating]);
+    }
+
+    public static function getComments($bookId) {
+        $pdo = self::getConnection();
+        $stmt = $pdo->prepare('SELECT * FROM comments WHERE book_id = ? ORDER BY created_at DESC');
+        $stmt->execute([$bookId]);
+        return $stmt->fetchAll();
+    }
+
+    public static function getAllBooks() {
+        $pdo = self::getConnection();
+        $stmt = $pdo->query('SELECT * FROM books');
+        $books = [];
+        while ($row = $stmt->fetch()) {
+            $books[] = new Book($row['titel'], $row['auteur'], $row['prijs'], $row['id']);
+        }
+        return $books;
     }
 }
 ?>

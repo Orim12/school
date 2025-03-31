@@ -10,7 +10,11 @@ class BooksController {
     // prijs DECIMAL(10, 2)
 
     public function index() {
-        $books = Book::getAllBooks();
+        $sort = $_GET['sort'] ?? null;
+        $filter = $_GET['filter'] ?? null;
+        $search = $_GET['search'] ?? null;
+
+        $books = Book::getBooks($sort, $filter, $search);
         require __DIR__ . '/../views/books.php';
     }
 
@@ -55,6 +59,25 @@ class BooksController {
         }
         Book::deleteById($id);
         header('Location: /webdev/MVC1/public/index.php?url=books');
+    }
+
+    public function addComment($bookId) {
+        if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("Ongeautoriseerd verzoek.");
+        }
+        if (!$bookId) {
+            die("Boek ID ontbreekt.");
+        }
+        $comment = $_POST['comment'] ?? null;
+        $rating = $_POST['rating'] ?? null;
+
+        if (!$comment || !$rating) {
+            die("Reactie en beoordeling zijn verplicht.");
+        }
+
+        Book::addComment($bookId, $comment, $rating);
+        header('Location: /webdev/MVC1/public/index.php?url=books&action=show&id=' . $bookId);
+        exit();
     }
 }
 ?>
