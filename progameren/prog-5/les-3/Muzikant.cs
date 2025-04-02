@@ -1,10 +1,17 @@
 namespace les_3
 {
-    public class Muzikant : Persoon
+    public class Muzikant : IPersoon
     {
-        public Muzikant(string naam, string adres) : base(naam, adres) { }
+        public string Naam { get; set; }
+        public string Adres { get; set; }
 
-        public override void DoeIets()
+        public Muzikant(string naam, string adres)
+        {
+            Naam = naam;
+            Adres = adres;
+        }
+
+        public void DoeIets()
         {
             Console.WriteLine($"{Naam} speelt muziek.");
         }

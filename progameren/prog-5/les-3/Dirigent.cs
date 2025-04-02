@@ -1,10 +1,17 @@
 namespace les_3
 {
-    public class Dirigent : Persoon
+    public class Dirigent : IPersoon
     {
-        public Dirigent(string naam, string adres) : base(naam, adres) { }
+        public string Naam { get; set; }
+        public string Adres { get; set; }
 
-        public override void DoeIets()
+        public Dirigent(string naam, string adres)
+        {
+            Naam = naam;
+            Adres = adres;
+        }
+
+        public void DoeIets()
         {
             Console.WriteLine($"{Naam} geeft aanwijzingen.");
         }
