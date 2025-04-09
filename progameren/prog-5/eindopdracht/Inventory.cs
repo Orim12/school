@@ -87,13 +87,16 @@ public class Inventory
         }
     }
 
-    public void ShowInventory()
+    public void ShowInventory(Type? filterType = null)
     {
         Console.Clear();
         Console.WriteLine("=== Inventory Overzicht ===");
         for (int i = 0; i < Items.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {Items[i].Name} ({Items[i].GetType().Name})");
+            if (filterType == null || Items[i].GetType() == filterType)
+            {
+                Console.WriteLine($"{i + 1}. {Items[i].Name} ({Items[i].GetType().Name})");
+            }
         }
     }
 

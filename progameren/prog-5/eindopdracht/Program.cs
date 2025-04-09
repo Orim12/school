@@ -62,7 +62,7 @@ class Program
                     break;
                 case "4":
                     Console.WriteLine("Welke drankje wil je gebruiken?");
-                    inventory.ShowInventory(); // Show inventory with numbers
+                    inventory.ShowInventory(typeof(Potion)); // Show only potions
                     Console.Write("Kies het nummer van het drankje om te gebruiken: ");
                     if (int.TryParse(Console.ReadLine(), out int useIndex))
                     {
@@ -119,3 +119,4 @@ class Program
         }
     }
 }
+
