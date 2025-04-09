@@ -1,0 +1,77 @@
+[
+  {
+    "Type": "Weapon",
+    "Damage": 99,
+    "Sound": "Default weapon sound",
+    "Name": "test",
+    "Weight": 99
+  },
+  {
+    "Type": "Potion",
+    "HealAmount": 99,
+    "Color": null,
+    "Sound": "Default potion sound",
+    "Name": "test",
+    "Weight": 99
+  },
+  {
+    "Type": "Weapon",
+    "Damage": 45,
+    "Sound": "Sword slash",
+    "Name": "Iron Sword",
+    "Weight": 30
+  },
+  {
+    "Type": "Weapon",
+    "Damage": 70,
+    "Sound": "Axe smash",
+    "Name": "Battle Axe",
+    "Weight": 50
+  },
+  {
+    "Type": "Weapon",
+    "Damage": 120,
+    "Sound": "Boom",
+    "Name": "Explosive Bow",
+    "Weight": 40
+  },
+  {
+    "Type": "Potion",
+    "HealAmount": 25,
+    "Color": "Red",
+    "Sound": "Glug glug",
+    "Name": "Small Health Potion",
+    "Weight": 5
+  },
+  {
+    "Type": "Potion",
+    "HealAmount": 75,
+    "Color": "Blue",
+    "Sound": "Splash",
+    "Name": "Mana Potion",
+    "Weight": 7
+  },
+  {
+    "Type": "Potion",
+    "HealAmount": 50,
+    "Color": "Green",
+    "Sound": "Fizzle",
+    "Name": "Stamina Elixir",
+    "Weight": 6
+  },
+  {
+    "Type": "Weapon",
+    "Damage": 25,
+    "Sound": "Dagger stab",
+    "Name": "Rusty Dagger",
+    "Weight": 10
+  },
+  {
+    "Type": "Potion",
+    "HealAmount": 99,
+    "Color": "Purple",
+    "Sound": "Magical hum",
+    "Name": "Elixir of Life",
+    "Weight": 20
+  }
+]
