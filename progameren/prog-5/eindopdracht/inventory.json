@@ -7,14 +7,6 @@
     "Weight": 99
   },
   {
-    "Type": "Potion",
-    "HealAmount": 99,
-    "Color": null,
-    "Sound": "Default potion sound",
-    "Name": "test",
-    "Weight": 99
-  },
-  {
     "Type": "Weapon",
     "Damage": 45,
     "Sound": "Sword slash",
@@ -73,5 +65,20 @@
     "Sound": "Magical hum",
     "Name": "Elixir of Life",
     "Weight": 20
+  },
+  {
+    "Type": "Weapon",
+    "Damage": 99,
+    "Sound": "Default weapon sound",
+    "Name": "tessst",
+    "Weight": 99
+  },
+  {
+    "Type": "Potion",
+    "HealAmount": 99,
+    "Color": "wit",
+    "Sound": "Default potion sound",
+    "Name": "tesssst",
+    "Weight": 99
   }
 ]
