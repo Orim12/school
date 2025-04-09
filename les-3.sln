@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prog-5", "prog-5", "{3DD9AB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "les-3", "progameren\prog-5\les-3\les-3.csproj", "{79D59B1C-C6E2-40E3-82A7-7C611754E1AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eindopdracht", "progameren\prog-5\eindopdracht\eindopdracht.csproj", "{E4AC25FD-61C0-4D9A-AF50-1245152D2925}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,18 @@ Global
 		{79D59B1C-C6E2-40E3-82A7-7C611754E1AB}.Release|x64.Build.0 = Release|Any CPU
 		{79D59B1C-C6E2-40E3-82A7-7C611754E1AB}.Release|x86.ActiveCfg = Release|Any CPU
 		{79D59B1C-C6E2-40E3-82A7-7C611754E1AB}.Release|x86.Build.0 = Release|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Debug|x64.Build.0 = Debug|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Debug|x86.Build.0 = Debug|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Release|x64.ActiveCfg = Release|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Release|x64.Build.0 = Release|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Release|x86.ActiveCfg = Release|Any CPU
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +52,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3DD9ABD1-0A7B-2969-818C-74E951990542} = {73192639-D63E-EEF7-8E0B-DA3F196BCFDD}
 		{79D59B1C-C6E2-40E3-82A7-7C611754E1AB} = {3DD9ABD1-0A7B-2969-818C-74E951990542}
+		{E4AC25FD-61C0-4D9A-AF50-1245152D2925} = {3DD9ABD1-0A7B-2969-818C-74E951990542}
 	EndGlobalSection
 EndGlobal
