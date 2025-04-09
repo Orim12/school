@@ -1,4 +1,4 @@
-namespace DefaultNamespace;
+namespace eindopdracht;
 
 public class Weapon : Item
 {

@@ -1,8 +1,7 @@
-using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace DefaultNamespace;
+namespace eindopdracht;
 
 public class ItemJsonConverter : JsonConverter<Item>
 {

@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace DefaultNamespace;
+namespace eindopdracht;
 
 [JsonConverter(typeof(ItemJsonConverter))]
 abstract public class Item
