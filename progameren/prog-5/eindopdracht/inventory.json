@@ -80,5 +80,12 @@
     "Sound": "Default potion sound",
     "Name": "tesssst",
     "Weight": 99
+  },
+  {
+    "Type": "Weapon",
+    "Damage": 9001,
+    "Sound": "Default weapon sound",
+    "Name": "heel cool zwaard",
+    "Weight": 7
   }
 ]
