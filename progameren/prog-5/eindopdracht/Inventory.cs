@@ -4,21 +4,27 @@ namespace eindopdracht;
 
 public class Inventory
 {
+    // List to store all items in the inventory
     private List<Item> Items { get; set; } = new List<Item>();
+
+    // Property to store sound (if applicable)
     public string Sound { get; set; }
 
+    // File path for saving and loading inventory data
     private const string FilePath = "inventory.json";
 
+    // Add an item to the inventory
     public void AddItem(Item item)
     {
         Items.Add(item);
         Console.WriteLine($"{item.Name} is toegevoegd aan de inventory.");
     }
 
+    // Remove an item by name and type
     public void RemoveItem(string itemName, string itemType)
     {
-        Item item = Items.Find(i => i.Name == itemName && 
-                                    ((itemType == "Weapon" && i is Weapon) || 
+        Item item = Items.Find(i => i.Name == itemName &&
+                                    ((itemType == "Weapon" && i is Weapon) ||
                                      (itemType == "Potion" && i is Potion)));
         if (item != null)
         {
@@ -32,6 +38,7 @@ public class Inventory
         }
     }
 
+    // Remove an item by its index in the list
     public void RemoveItemByIndex(int index)
     {
         if (index >= 0 && index < Items.Count)
@@ -47,6 +54,7 @@ public class Inventory
         }
     }
 
+    // Use an item by name (only works for potions)
     public void UseItem(string itemName)
     {
         // Find the item by name and ensure it is of type Potion
@@ -64,6 +72,7 @@ public class Inventory
         }
     }
 
+    // Use an item by its index (only works for potions)
     public void UseItemByIndex(int index)
     {
         if (index >= 0 && index < Items.Count)
@@ -87,6 +96,7 @@ public class Inventory
         }
     }
 
+    // Display the inventory, optionally filtered by type
     public void ShowInventory(Type? filterType = null)
     {
         Console.Clear();
@@ -100,6 +110,7 @@ public class Inventory
         }
     }
 
+    // Save the inventory to a JSON file
     public void SaveToFile()
     {
         try
@@ -114,6 +125,7 @@ public class Inventory
         }
     }
 
+    // Load the inventory from a JSON file
     public void LoadFromFile()
     {
         try
@@ -134,6 +146,7 @@ public class Inventory
         }
     }
 
+    // Play the sound associated with an item by its index
     public void PlayItemSoundByIndex(int index)
     {
         if (index >= 0 && index < Items.Count)

@@ -59,14 +59,6 @@
     "Weight": 10
   },
   {
-    "Type": "Potion",
-    "HealAmount": 99,
-    "Color": "Purple",
-    "Sound": "Magical hum",
-    "Name": "Elixir of Life",
-    "Weight": 20
-  },
-  {
     "Type": "Weapon",
     "Damage": 99,
     "Sound": "Default weapon sound",
@@ -87,5 +79,20 @@
     "Sound": "Default weapon sound",
     "Name": "heel cool zwaard",
     "Weight": 7
+  },
+  {
+    "Type": "Weapon",
+    "Damage": 345678,
+    "Sound": "Default weapon sound",
+    "Name": "kjhgfdslkjhgfd",
+    "Weight": -10
+  },
+  {
+    "Type": "Potion",
+    "HealAmount": 65,
+    "Color": "wit",
+    "Sound": "Default potion sound",
+    "Name": "gert",
+    "Weight": 65
   }
 ]
