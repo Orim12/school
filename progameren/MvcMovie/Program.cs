@@ -30,6 +30,10 @@ public class Program
             pattern: "{controller=Home}/{action=Index}/{id?}")
             .WithStaticAssets();
 
+        app.MapControllerRoute(
+            name: "helloWorld",
+            pattern: "{controller=HelloWorld}/{action=Index}/{id?}");
+
         app.Run();
     }
 }

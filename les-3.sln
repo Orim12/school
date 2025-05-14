@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eindopdracht", "progameren\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webdev", "webdev", "{B24DAC5E-90D3-1647-BF94-1045781CCF9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "webdev\MvcMovie\MvcMovie.csproj", "{DF809E13-CBC7-4A83-ABCB-75494CAB21E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "progameren\MvcMovie\MvcMovie.csproj", "{DF809E13-CBC7-4A83-ABCB-75494CAB21E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
