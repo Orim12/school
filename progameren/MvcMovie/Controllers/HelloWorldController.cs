@@ -8,14 +8,17 @@ namespace MvcMovie.Controllers
         // GET: /HelloWorld/
         public IActionResult Index()
         {
-            return Content("Hello, mijn naam is [Jouw Naam]!");
+            ViewData["Title"] = "Hello World - Index";
+            return View();
         }
 
         // GET: /HelloWorld/Welcome/
         public IActionResult Welcome(string name)
         {
-            string currentDateTime = DateTime.Now.ToString("F");
-            return Content($"Welkom {name}, de huidige datum en tijd is: {currentDateTime}");
+            ViewData["Title"] = "Hello World - Welcome";
+            ViewData["Name"] = name;
+            ViewData["CurrentDateTime"] = DateTime.Now.ToString("F");
+            return View();
         }
     }
 }
