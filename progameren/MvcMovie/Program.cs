@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Models;
+
 namespace MvcMovie;
 
 public class Program
@@ -9,7 +12,18 @@ public class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
 
+        // Add the database context
+        builder.Services.AddDbContext<MvcMovieContext>(options =>
+            options.UseSqlite(builder.Configuration.GetConnectionString("MvcMovieContext")));
+
         var app = builder.Build();
+
+        // Seed the database
+        using (var scope = app.Services.CreateScope())
+        {
+            var services = scope.ServiceProvider;
+            SeedData.Initialize(services);
+        }
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -33,6 +47,10 @@ public class Program
         app.MapControllerRoute(
             name: "helloWorld",
             pattern: "{controller=HelloWorld}/{action=Index}/{id?}");
+
+        app.MapControllerRoute(
+            name: "movie",
+            pattern: "{controller=Movie}/{action=Index}/{id?}");
 
         app.Run();
     }
